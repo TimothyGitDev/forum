@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        background-color: #2f3c57;
+    }
+
+    h2 {
+        color: #fff;
+    }
+    .container {
+        max-width: 1250px;
+        margin: 0 25px;
+    }
+
+    span{
+        background-color: aquamarine;
+        padding: 10px;
+        
+        align-items: center;
+        margin-right: 0;
+        padding-right: 0;
+        border-radius: 5px;
+        
+        
+    }
+
+    #names {
+        padding: 4px;
+        background: #542626;
+        color: #fff;
+        
+    }
+
+    #author {
+        padding: 10px;
+    }
+
+    #name {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: rgb(186, 124, 9);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="container">
+    <h2>Посты</h2>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Сообщение" required></textarea><br>
+        <input type="text" placeholder="имя" name="names" id="name" required /><br>
+        <button type="submit">Отправить</button>
+    </form>
+      <p class="message">
+        {% for msg in messages %}
+            <span id="names">{{ msg[2] }}</span><br><br>
+            <span id="author">{{ msg[1] }}</span><br><br>
+            
+        {% endfor %}
+      </p>
+
+      
+    </div>
+      
+
+</body>
+</html>
